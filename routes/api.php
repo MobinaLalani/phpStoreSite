@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__ . "/../app/Controllers/CategoryController.php";
+require_once __DIR__ . "/../app/Controllers/UploadController.php";
 
 $method = $_SERVER["REQUEST_METHOD"];
 
@@ -15,6 +16,11 @@ $uri = preg_replace('#^/index\.php#', '', $uri);
 $uri = '/' . trim($uri, '/');
 
 $controller = new CategoryController();
+
+if ($method === "POST" && $uri === "/upload") {
+    (new UploadController())->store();
+    exit;
+}
 
 if ($method === "GET" && $uri === "/categories") {
 
