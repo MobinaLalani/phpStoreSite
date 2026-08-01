@@ -1,0 +1,145 @@
+[
+  {
+    "id": 1,
+    "title": "iPhone 16 Pro",
+    "slug": "iphone-16-pro",
+    "shortDescription": "جدیدترین گوشی اپل",
+    "description": "آیفون 16 پرو با تراشه A18 Pro، نمایشگر OLED و دوربین حرفه‌ای نسل جدیددددد.",
+    "thumbnail": "/Image/products/phone1.jpg",
+    "images": [
+      "/Image/products/phone1.jpg",
+      "/Image/products/phone2.jpg"
+    ],
+    "price": 82000000,
+    "oldPrice": 87000000,
+    "discount": 8,
+    "rating": 4.8,
+    "reviewCount": 248,
+    "stock": 15,
+    "sku": "APL-IP16PRO",
+    "brand": "Apple",
+    "categoryId": 1,
+    "tags": [
+      "5G",
+      "OLED",
+      "A18 Pro",
+      "Face ID"
+    ],
+    "colors": [
+      "Titanium",
+      "Black",
+      "White"
+    ],
+    "specifications": [
+      {
+        "title": "حافظه",
+        "value": "256GB"
+      },
+      {
+        "title": "رم",
+        "value": "8GB"
+      },
+      {
+        "title": "نمایشگر",
+        "value": "6.3 inch OLED"
+      },
+      {
+        "title": "پردازنده",
+        "value": "Apple A18 Pro"
+      }
+    ],
+    "status": "active",
+    "isFeatured": true,
+    "createdAt": "2026-07-26T12:00:00Z",
+    "updatedAt": "2026-07-26T09:45:47.637Z"
+  },
+  {
+    "id": 2,
+    "title": "MacBook Air M4",
+    "slug": "macbook-air-m4",
+    "shortDescription": "قدرت و سبکی",
+    "description": "مک‌بوک ایر M4 با طراحی سبک و پردازنده Apple Silicon.",
+    "thumbnail": "/Image/products/laptop1.jpg",
+    "images": [
+      "/Image/products/laptop1.jpg"
+    ],
+    "price": 112000000,
+    "oldPrice": 118000000,
+    "discount": 5,
+    "rating": 4.9,
+    "reviewCount": 103,
+    "stock": 6,
+    "sku": "APL-MBA-M4",
+    "brand": "Apple",
+    "categoryId": 2,
+    "tags": [
+      "M4",
+      "Retina",
+      "SSD"
+    ],
+    "colors": [
+      "Silver",
+      "Midnight"
+    ],
+    "specifications": [
+      {
+        "title": "پردازنده",
+        "value": "Apple M4"
+      },
+      {
+        "title": "رم",
+        "value": "16GB"
+      },
+      {
+        "title": "حافظه",
+        "value": "512GB SSD"
+      }
+    ],
+    "status": "active",
+    "isFeatured": true,
+    "createdAt": "2026-07-26T12:00:00Z",
+    "updatedAt": "2026-07-26T12:00:00Z"
+  },
+  {
+    "id": 3,
+    "title": "Sony WH-1000XM5",
+    "slug": "sony-wh1000xm5",
+    "shortDescription": "هدفون نویز کنسلینگ",
+    "description": "هدفون پرچمدار سونی با حذف نویز هوشمند.",
+    "thumbnail": "/Image/products/headphone2.jpg",
+    "images": [
+      "/Image/products/headphone2.jpg"
+    ],
+    "price": 18900000,
+    "oldPrice": 21400000,
+    "discount": 12,
+    "rating": 4.7,
+    "reviewCount": 184,
+    "stock": 20,
+    "sku": "SONY-XM5",
+    "brand": "Sony",
+    "categoryId": 3,
+    "tags": [
+      "Bluetooth",
+      "Noise Cancelling"
+    ],
+    "colors": [
+      "Black",
+      "Silver"
+    ],
+    "specifications": [
+      {
+        "title": "نوع اتصال",
+        "value": "Bluetooth 5.3"
+      },
+      {
+        "title": "شارژدهی",
+        "value": "30 ساعت"
+      }
+    ],
+    "status": "active",
+    "isFeatured": false,
+    "createdAt": "2026-07-26T12:00:00Z",
+    "updatedAt": "2026-07-26T12:00:00Z"
+  }
+]
