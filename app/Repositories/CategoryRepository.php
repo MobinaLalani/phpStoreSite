@@ -8,6 +8,10 @@ class CategoryRepository
     public function __construct()
     {
         $this->categoryFile = __DIR__ . "/../data/categories.json";
+        $legacyCategoryFile = __DIR__ . "/../data/Categories.json";
+        if (!file_exists($this->categoryFile) && file_exists($legacyCategoryFile)) {
+            $this->categoryFile = $legacyCategoryFile;
+        }
         $this->productFile = __DIR__ . "/../data/products.json";
     }
 
@@ -19,7 +23,9 @@ class CategoryRepository
 
         $json = file_get_contents($this->categoryFile);
 
-        return json_decode($json, true);
+        $categories = json_decode($json, true);
+
+        return is_array($categories) ? $categories : array();
     }
 
     public function getById($id)
@@ -54,7 +60,8 @@ class CategoryRepository
 
         file_put_contents(
             $this->categoryFile,
-            json_encode($categories, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE)
+            json_encode($categories, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE),
+            LOCK_EX
         );
 
         return $newCategory;
@@ -72,7 +79,8 @@ class CategoryRepository
 
                 file_put_contents(
                     $this->categoryFile,
-                    json_encode($categories, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE)
+                    json_encode($categories, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE),
+                    LOCK_EX
                 );
 
                 return $categories[$index];
@@ -96,7 +104,8 @@ class CategoryRepository
 
         file_put_contents(
             $this->categoryFile,
-            json_encode(array_values($filtered), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE)
+            json_encode(array_values($filtered), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE),
+            LOCK_EX
         );
 
         return true;
