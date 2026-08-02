@@ -2,6 +2,7 @@
 
 require_once __DIR__ . "/../app/Controllers/CategoryController.php";
 require_once __DIR__ . "/../app/Controllers/UploadController.php";
+require_once __DIR__ . "/../app/Controllers/ProductController.php";
 
 $method = $_SERVER["REQUEST_METHOD"];
 
@@ -16,9 +17,35 @@ $uri = preg_replace('#^/index\.php#', '', $uri);
 $uri = '/' . trim($uri, '/');
 
 $controller = new CategoryController();
+$productController = new ProductController();
 
 if ($method === "POST" && $uri === "/upload") {
     (new UploadController())->store();
+    exit;
+}
+
+if ($method === "GET" && $uri === "/products") {
+    $productController->index();
+    exit;
+}
+
+if ($method === "GET" && preg_match('#^/products/(\d+)$#', $uri, $matches)) {
+    $productController->show((int) $matches[1]);
+    exit;
+}
+
+if ($method === "POST" && $uri === "/products") {
+    $productController->store();
+    exit;
+}
+
+if (($method === "PUT" || $method === "PATCH") && preg_match('#^/products/(\d+)$#', $uri, $matches)) {
+    $productController->update((int) $matches[1]);
+    exit;
+}
+
+if ($method === "DELETE" && preg_match('#^/products/(\d+)$#', $uri, $matches)) {
+    $productController->destroy((int) $matches[1]);
     exit;
 }
 

@@ -1,6 +1,11 @@
 <?php
 
-header("Access-Control-Allow-Origin: http://localhost:3000");
+$allowedOrigins = array("http://localhost:3000", "http://localhost:5173", "http://127.0.0.1:5173");
+$origin = isset($_SERVER["HTTP_ORIGIN"]) ? $_SERVER["HTTP_ORIGIN"] : "";
+if (in_array($origin, $allowedOrigins, true)) {
+    header("Access-Control-Allow-Origin: " . $origin);
+    header("Vary: Origin");
+}
 header("Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
 
