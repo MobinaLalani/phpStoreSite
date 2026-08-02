@@ -5,7 +5,7 @@ require_once __DIR__ . "/../Repositories/ProductRepository.php";
 class ProductController
 {
     private $repository;
-    private $fields = array("title", "slug", "shortDescription", "description", "thumbnail", "images", "price", "oldPrice", "discount", "rating", "reviewCount", "stock", "sku", "brand", "categoryId", "tags", "colors", "specifications", "status", "isFeatured");
+    private $fields = array("title", "slug", "shortDescription", "description", "thumbnail", "images", "rating", "reviewCount", "stock", "sku", "brand", "categoryId", "tags", "colors", "specifications", "status", "isFeatured");
 
     public function __construct()
     {
@@ -75,10 +75,10 @@ class ProductController
         foreach ($requiredStrings as $field) {
             if (($creating || array_key_exists($field, $body)) && (!isset($body[$field]) || !is_string($body[$field]) || trim($body[$field]) === "")) $errors[$field] = $field . " is required";
         }
-        foreach (array("price", "stock", "categoryId") as $field) {
+        foreach (array("stock", "categoryId") as $field) {
             if (($creating || array_key_exists($field, $body)) && (!isset($body[$field]) || !is_numeric($body[$field]) || (float) $body[$field] < 0)) $errors[$field] = $field . " must be a positive number";
         }
-        foreach (array("oldPrice", "discount", "rating", "reviewCount") as $field) {
+        foreach (array("rating", "reviewCount") as $field) {
             if (array_key_exists($field, $body) && $body[$field] !== null && !is_numeric($body[$field])) $errors[$field] = $field . " must be numeric";
         }
         foreach (array("images", "tags", "colors", "specifications") as $field) {
