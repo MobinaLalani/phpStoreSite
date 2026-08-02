@@ -16,7 +16,7 @@ class Auth
     {
         $config = self::config(); $now = time();
         $header = self::encode(json_encode(array("alg" => "HS256", "typ" => "JWT")));
-        $payload = self::encode(json_encode(array("sub" => $username, "iat" => $now, "exp" => $now + $config["token_ttl"])));
+        $payload = self::encode(json_encode(array("sub" => $username, "iat" => $now, "exp" => $now + $config["token_ttl"], "ver" => isset($config["token_version"]) ? $config["token_version"] : 1)));
         $signature = self::encode(hash_hmac("sha256", $header . "." . $payload, $config["token_secret"], true));
         return $header . "." . $payload . "." . $signature;
     }
@@ -36,6 +36,8 @@ class Auth
         if (!hash_equals($expected, $parts[2])) return null;
         $decoded = self::decode($parts[1]); $payload = $decoded ? json_decode($decoded, true) : null;
         if (!is_array($payload) || !isset($payload["sub"], $payload["exp"]) || (int) $payload["exp"] <= time()) return null;
+        $version = isset($config["token_version"]) ? (int) $config["token_version"] : 1;
+        if (!isset($payload["ver"]) || (int) $payload["ver"] !== $version) return null;
         return array("username" => $payload["sub"], "expiresAt" => (int) $payload["exp"]);
     }
 

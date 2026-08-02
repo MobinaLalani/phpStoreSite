@@ -1,0 +1,42 @@
+{
+    "store": {
+        "name": "اتصال گستر",
+        "shortDescription": "تامین و فروش تجهیزات صنعتی با مشاوره تخصصی",
+        "address": "تهران، ایران",
+        "landline": "021-12345678",
+        "mobile": "0912-123-4567",
+        "whatsapp": "989121234567",
+        "email": "info@example.com",
+        "workingHours": "شنبه تا پنجشنبه، ۸ تا ۱۸",
+        "logo": "",
+        "favicon": ""
+    },
+    "inquiry": {
+        "phoneEnabled": true,
+        "whatsappEnabled": true,
+        "buttonText": "استعلام قیمت",
+        "whatsappMessage": "سلام، برای استعلام قیمت محصول «{product}» پیام می‌دهم.",
+        "afterHoursMessage": "پیام شما ثبت شد؛ در اولین ساعت کاری پاسخ می‌دهیم."
+    },
+    "social": {
+        "instagram": "",
+        "telegram": "",
+        "linkedin": "",
+        "aparat": ""
+    },
+    "appearance": {
+        "primaryColor": "#ef4444",
+        "heroTitle": "کیفیتی که اعتماد می‌سازد",
+        "heroDescription": "تامین و فروش تجهیزات صنعتی با تضمین کیفیت، ارسال سریع و پشتیبانی تخصصی.",
+        "heroImage": "",
+        "showCategories": true,
+        "showFeaturedProducts": true
+    },
+    "seo": {
+        "title": "اتصال گستر | تجهیزات صنعتی",
+        "description": "تامین و فروش تجهیزات صنعتی و ابزارآلات با مشاوره تخصصی",
+        "keywords": "تجهیزات صنعتی, ابزارآلات, اتصال گستر",
+        "shareImage": "",
+        "allowIndexing": true
+    }
+}
