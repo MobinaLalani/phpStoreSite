@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "title": "iPhone 16 Pro",
+        "title": "iPhone 16 Pro1",
         "slug": "iphone-16-pro",
         "shortDescription": "جدیدترین گوشی اپل",
         "description": "آیفون 16 پرو با تراشه A18 Pro، نمایشگر OLED و دوربین حرفه‌ای نسل جدیددددد.",
@@ -51,7 +51,7 @@
         "status": "active",
         "isFeatured": true,
         "createdAt": "2026-07-26T12:00:00Z",
-        "updatedAt": "2026-07-26T09:45:47.637Z"
+        "updatedAt": "2026-08-02T06:05:40+00:00"
     },
     {
         "id": 2,
